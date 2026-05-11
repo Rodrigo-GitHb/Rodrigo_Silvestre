@@ -7,7 +7,7 @@ const projects = [
       'Clone front-end com foco em fidelidade visual, responsividade e boa navegação.',
     stack: ['HTML', 'CSS', 'JavaScript'],
     link: 'https://clone-disneyplus-eosin-sigma.vercel.app/',
-    accent: 'cinema',
+    accent: 'Streaming',
   },
   {
     title: 'Lista de Tarefas',
