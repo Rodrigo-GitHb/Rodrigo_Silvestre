@@ -1,28 +1,72 @@
 import { motion } from 'framer-motion'
+import heroImage from '../../assets/hero.png'
 
 const Hero = () => {
   return (
-    <section style={{
-      minHeight: '100vh',
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'center',
-      textAlign: 'center',
-      paddingTop: '80px'
-    }}>
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 2 }}
-      >
-        <h1 style={{ fontSize: '3rem', marginBottom: '1rem' }}>
-          Olá, eu sou <span style={{ color: '#672c79' }}>Rodrigo Silvestre</span>
-        </h1>
-        <p style={{ fontSize: '1.2rem', color: '#666' }}>
-          Desenvolvedor FullStack Python, apaixonado por criar soluções inovadoras e eficientes. Bem-vindo ao meu portfólio! <br />
-          Com experiencia em ServiceNow, Python, JavaScript, React, Node.js e mais.
-        </p>
-      </motion.div>
+    <section id="home" className="hero-section">
+      <div className="container hero-grid">
+        <motion.div
+          className="hero-copy"
+          initial={{ opacity: 0, y: 32 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+        >
+          <span className="eyebrow">Disponível para projetos e times de produto</span>
+          <h1>
+            Transformo ideias em produtos web elegantes, rápidos e prontos para crescer.
+          </h1>
+          <p className="hero-lead">
+            Desenvolvedor Full Stack com foco em Python, React, automações e experiências
+            digitais claras, rápidas e bem resolvidas.
+          </p>
+
+          <div className="hero-actions">
+            <a className="primary-button" href="#projects">
+              Ver projetos
+            </a>
+            <a className="secondary-button" href="#contact">
+              Falar comigo
+            </a>
+          </div>
+
+          <div className="hero-highlights" aria-label="Destaques profissionais">
+            <div>
+              <strong>Full Stack</strong>
+              <span>React, TypeScript, Node.js e Python</span>
+            </div>
+            <div>
+              <strong>ServiceNow</strong>
+              <span>Fluxos, integrações e automações</span>
+            </div>
+            <div>
+              <strong>Entrega</strong>
+              <span>Interfaces úteis, rápidas e responsivas</span>
+            </div>
+          </div>
+        </motion.div>
+
+        <motion.div
+          className="hero-visual"
+          initial={{ opacity: 0, scale: 0.92 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.9, delay: 0.15 }}
+        >
+          <div className="portrait-card">
+            <div className="portrait-glow" />
+            <img src={heroImage} alt="Ilustração de destaque do portfólio" />
+
+            <div className="floating-note note-top">
+              <span>3+</span>
+              <p>Anos evoluindo com código, produto e melhoria contínua.</p>
+            </div>
+
+            <div className="floating-note note-bottom">
+              <span>Stack versátil</span>
+              <p>Front-end, back-end, APIs e automações.</p>
+            </div>
+          </div>
+        </motion.div>
+      </div>
     </section>
   )
 }

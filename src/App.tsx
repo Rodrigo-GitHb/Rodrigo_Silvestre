@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import Header from './components/Header'
 import Hero from './components/Hero'
 import Projects from './components/Projects'
@@ -10,7 +10,12 @@ import GlobalStyle from './styles/global'
 function App() {
   const [isDark, setIsDark] = useState(() => {
     const savedTheme = localStorage.getItem('theme')
-    return savedTheme === 'dark'
+
+    if (savedTheme) {
+      return savedTheme === 'dark'
+    }
+
+    return window.matchMedia('(prefers-color-scheme: dark)').matches
   })
 
   useEffect(() => {
@@ -18,17 +23,19 @@ function App() {
   }, [isDark])
 
   const toggleTheme = () => {
-    setIsDark(!isDark)
+    setIsDark((currentTheme) => !currentTheme)
   }
 
   return (
     <>
       <GlobalStyle isDark={isDark} />
       <Header toggleTheme={toggleTheme} isDark={isDark} />
-      <Hero />
-      <Projects />
-      <Skills />
-      <Contact />
+      <main>
+        <Hero />
+        <Projects />
+        <Skills />
+        <Contact />
+      </main>
       <Footer />
     </>
   )

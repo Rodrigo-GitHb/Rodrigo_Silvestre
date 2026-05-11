@@ -1,19 +1,11 @@
-import styled from 'styled-components'
-
-const FooterSection = styled.footer`
-  text-align: center;
-  padding: 2rem 0;
-  background: #3c014e;
-  color: white;
-`
-
 const Footer = () => {
   return (
-    <FooterSection>
-      <div className="container">
-        <p>&copy; 2026 Portfólio Rodrigo Silvestre.</p>
+    <footer className="site-footer">
+      <div className="container footer-shell">
+        <p>© 2026 Rodrigo Silvestre. Portfólio pensado para transmitir clareza, confiança e resultado.</p>
+        <a href="#home">Voltar ao topo</a>
       </div>
-    </FooterSection>
+    </footer>
   )
 }
 
